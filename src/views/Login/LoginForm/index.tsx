@@ -49,10 +49,7 @@ const App: React.FC = () => {
         initialValues={{ remember: true }}
         onFinish={onFinish}
       >
-        <h1 className={`${formTitle} global-center`}>卢照天</h1>
-        <h1 className={`${formTitle} global-center`}>
-          个人练习 React 后台管理系统
-        </h1>
+        <h1 className={`${formTitle} global-center`}>Vite - React</h1>
         <Form.Item
           name="username"
           rules={[{ required: true, message: "请填写账号！" }]}

@@ -1,6 +1,6 @@
 import Table from "@/components/Table";
 // import MyForm from "@/components/Form";
-import MyForm from './Form'
+import MyForm from "./Form";
 import { Space, Tag, Form } from "antd";
 import { DataType } from "@/types/menu";
 import type { ColumnsType } from "antd/es/table";
@@ -79,7 +79,6 @@ const data: DataType[] = [
 ];
 
 const Menu: React.FC = () => {
-
   const [form] = Form.useForm();
   return (
     <>
@@ -87,7 +86,7 @@ const Menu: React.FC = () => {
       <MyForm />
       <Table<DataType> columns={columns} dataSource={data} />
     </>
-  )
+  );
 };
 
 export default Menu;
