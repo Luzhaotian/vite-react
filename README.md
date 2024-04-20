@@ -7,10 +7,16 @@ npm 版本 9.6.6 （这个版本无所谓）
 
 # 2 开发工具
 
-VSCode 
+VSCode
 
 # 3 启动步骤
 
 下载依赖 yarn 或者 npm install
 启动 npm run dev
 打包 npm run build
+
+### 本人邮箱 欢迎联系我
+
+```sh
+lu199705@163.com
+```
