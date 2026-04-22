@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Statistic } from "antd";
-import moment from "moment";
+import { useState, useEffect } from 'react';
+import { Statistic } from 'antd';
+import moment from 'moment';
 
 function Clock() {
   const [currentTime, setCurrentTime] = useState(moment());
@@ -19,10 +19,10 @@ function Clock() {
     <>
       <Statistic
         style={{
-          fontWeight: "bold",
-          width: '110px'
+          fontWeight: 'bold',
+          width: '110px',
         }}
-        value={currentTime.format("HH:mm:ss")}
+        value={currentTime.format('HH:mm:ss')}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
 /**
  * 获取所有的 cookie
@@ -11,8 +11,7 @@ export const getAllCookies = () => Cookies.get();
  * @param name cookie 名字
  * @param data 存储的数据
  */
-export const setCookie = <T>(name: string, data: T) =>
-  Cookies.set(name, String(data));
+export const setCookie = <T>(name: string, data: T) => Cookies.set(name, String(data));
 
 /**
  *  获取指定 cookie

@@ -1,51 +1,51 @@
-import { Pie } from "@ant-design/plots";
+import { Pie } from '@ant-design/plots';
 export const PieBox = () => {
   const data = [
     {
-      type: "分类一",
+      type: '分类一',
       value: 27,
     },
     {
-      type: "分类二",
+      type: '分类二',
       value: 25,
     },
     {
-      type: "分类三",
+      type: '分类三',
       value: 18,
     },
     {
-      type: "分类四",
+      type: '分类四',
       value: 15,
     },
     {
-      type: "分类五",
+      type: '分类五',
       value: 10,
     },
     {
-      type: "其他",
+      type: '其他',
       value: 5,
     },
   ];
   const config = {
     appendPadding: 10,
     data,
-    angleField: "value",
-    colorField: "type",
+    angleField: 'value',
+    colorField: 'type',
     radius: 0.8,
     label: {
-      type: "outer",
-      content: "{name} {percentage}",
+      type: 'outer',
+      content: '{name} {percentage}',
     },
     interactions: [
       {
-        type: "pie-legend-active",
+        type: 'pie-legend-active',
       },
       {
-        type: "element-active",
+        type: 'element-active',
       },
     ],
   };
-  return <Pie style={{ height: "99%" }} {...config} />;
+  return <Pie style={{ height: '99%' }} {...config} />;
 };
 
 export default PieBox;

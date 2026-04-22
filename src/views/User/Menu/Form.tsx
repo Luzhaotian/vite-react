@@ -1,4 +1,4 @@
-import React from "react"; // { useState }
+import React from 'react'; // { useState }
 // import { DownOutlined } from "@ant-design/icons";
 import {
   Button,
@@ -9,7 +9,7 @@ import {
   // Select,
   Space,
   theme,
-} from "antd";
+} from 'antd';
 
 // const { Option } = Select;
 
@@ -17,11 +17,11 @@ const AdvancedSearchForm = () => {
   const { token } = theme.useToken();
   const [form] = Form.useForm();
   console.log(form);
-  
+
   // const [expand, setExpand] = useState(false);
 
   const formStyle = {
-    maxWidth: "none",
+    maxWidth: 'none',
     // background: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
     padding: 24,
@@ -54,18 +54,13 @@ const AdvancedSearchForm = () => {
   };
 
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+    console.log('Received values of form: ', values);
   };
 
   return (
-    <Form
-      form={form}
-      name="advanced_search"
-      style={formStyle}
-      onFinish={onFinish}
-    >
+    <Form form={form} name="advanced_search" style={formStyle} onFinish={onFinish}>
       <Row gutter={24}>{getFields()}</Row>
-      <div style={{ textAlign: "right" }}>
+      <div style={{ textAlign: 'right' }}>
         <Space size="small">
           <Button type="primary" htmlType="submit">
             Search

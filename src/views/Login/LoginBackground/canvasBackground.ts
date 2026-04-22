@@ -1,9 +1,9 @@
-import { canvasType } from "@/types/login";
-import { randomNumber } from "@/utils/random";
+import { canvasType } from '@/types/login';
+import { randomNumber } from '@/utils/random';
 const init = () => {
-  const canvas = document.getElementById("canvas") as canvasType;
+  const canvas = document.getElementById('canvas') as canvasType;
 
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext('2d')!;
   const arr: Dot[] = [];
   setCanvasShape(canvas);
   class Dot {
@@ -35,17 +35,13 @@ const init = () => {
       }
       this.x += this.dirX;
       this.y += this.dirY;
-      this.color = this.color;
       this.draw();
     }
   }
 
   const ball = function () {
     for (let i = 0; i < 100; i++) {
-      const dots = new Dot(
-        randomNumber(0, canvas.width),
-        randomNumber(0, canvas.height)
-      );
+      const dots = new Dot(randomNumber(0, canvas.width), randomNumber(0, canvas.height));
       arr.push(dots);
     }
   };
@@ -58,10 +54,7 @@ const init = () => {
     arr.forEach((value, key) => {
       arr.forEach((item, index) => {
         if (key === index) return;
-        if (
-          Math.abs(value.x - item.x) < 120 &&
-          Math.abs(value.y - item.y) < 120
-        ) {
+        if (Math.abs(value.x - item.x) < 120 && Math.abs(value.y - item.y) < 120) {
           setLine(value.x, value.y, item.x, item.y, value.color);
         }
       });
@@ -90,6 +83,6 @@ const init = () => {
 const setCanvasShape = (canvas: canvasType) => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  canvas.style.background = "#000000 ";
+  canvas.style.background = '#000000 ';
 };
 export default init;

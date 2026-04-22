@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Icon, {
   HomeOutlined,
   LoadingOutlined,
@@ -8,9 +8,9 @@ import Icon, {
   CheckCircleTwoTone,
   HeartTwoTone,
   SmileTwoTone,
-} from "@ant-design/icons";
-import type { CustomIconComponentProps } from "@ant-design/icons/lib/components/Icon";
-import { Space } from "antd";
+} from '@ant-design/icons';
+import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
+import { Space } from 'antd';
 
 const HeartSvg = () => (
   <svg width="1em" height="1em" fill="currentColor" viewBox="0 0 1024 1024">
@@ -65,7 +65,7 @@ const PandaIcon = (props: Partial<CustomIconComponentProps>) => (
 
 const App: React.FC = () => (
   <Space>
-    <HomeOutlined style={{ fontSize: "40px", color: "blueviolet" }} />
+    <HomeOutlined style={{ fontSize: '40px', color: 'blueviolet' }} />
     <SettingFilled />
     <SmileOutlined />
     <SyncOutlined spin />
@@ -74,8 +74,8 @@ const App: React.FC = () => (
     <SmileTwoTone />
     <HeartTwoTone twoToneColor="#eb2f96" />
     <CheckCircleTwoTone twoToneColor="#52c41a" />
-    <HeartIcon style={{ color: "hotpink" }} />
-    <PandaIcon style={{ fontSize: "32px" }} />
+    <HeartIcon style={{ color: 'hotpink' }} />
+    <PandaIcon style={{ fontSize: '32px' }} />
     <Icon component={HomeOutlined as React.ForwardRefExoticComponent<any>} />
     <HomeOutlined />
   </Space>

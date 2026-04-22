@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
-import styles from "./index.module.scss";
-import { localStorageSetItem } from "@/utils/localStorage";
-import { useNavigate } from "react-router-dom";
-import Cookie from "js-cookie";
+import React, { useState } from 'react';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Form, Input } from 'antd';
+import styles from './index.module.scss';
+import { localStorageSetItem } from '@/utils/localStorage';
+import { useNavigate } from 'react-router-dom';
+import Cookie from 'js-cookie';
 
 const formData = {
-  username: "admin",
-  password: "123456",
+  username: 'admin',
+  password: '123456',
 };
 
 const App: React.FC = () => {
@@ -17,27 +17,27 @@ const App: React.FC = () => {
   const [loadings, setLoadings] = useState<boolean[]>([]);
 
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
-    localStorageSetItem("userInfo", values);
+    console.log('Received values of form: ', values);
+    localStorageSetItem('userInfo', values);
     const arg = Object.entries(values).reduce(
       (pre, cur, index, array) => (
-        (pre += `${cur[0]}=${cur[1]}${index === array.length - 1 ? "" : "&"}`),
+        (pre += `${cur[0]}=${cur[1]}${index === array.length - 1 ? '' : '&'}`),
         pre
       ),
-      ""
+      ''
     );
     const token = window.btoa(arg);
     // let encodedData = window.btoa("Hello, world"); // 编码
     // let decodedData = window.atob(encodedData);  // 解码
     console.log(token);
 
-    Cookie.set("token", token); // 模拟 token
-    Cookie.set("userInfo", arg);
+    Cookie.set('token', token); // 模拟 token
+    Cookie.set('userInfo', arg);
 
     setLoadings([true]);
 
     setTimeout(() => {
-      navigateTo("/");
+      navigateTo('/');
     }, 3000);
   };
 
@@ -52,17 +52,14 @@ const App: React.FC = () => {
         <h1 className={`${formTitle} global-center`}>Vite - React</h1>
         <Form.Item
           name="username"
-          rules={[{ required: true, message: "请填写账号！" }]}
+          rules={[{ required: true, message: '请填写账号！' }]}
           initialValue={formData.username}
         >
-          <Input
-            prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="账号"
-          />
+          <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账号" />
         </Form.Item>
         <Form.Item
           name="password"
-          rules={[{ required: true, message: "请填写密码！" }]}
+          rules={[{ required: true, message: '请填写密码！' }]}
           initialValue={formData.password}
         >
           <Input
@@ -72,10 +69,7 @@ const App: React.FC = () => {
           />
         </Form.Item>
         <Form.Item>
-          <div
-            className="global-center"
-            style={{ justifyContent: "space-between" }}
-          >
+          <div className="global-center" style={{ justifyContent: 'space-between' }}>
             <Form.Item name="remember" valuePropName="checked" noStyle>
               <Checkbox>记住账号密码</Checkbox>
             </Form.Item>

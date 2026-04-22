@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // import ReactDOM from "react-dom";
-import { Column } from "@ant-design/plots";
+import { Column } from '@ant-design/plots';
 
 const DemoColumn = () => {
   const [data, setData] = useState([]);
@@ -10,27 +10,25 @@ const DemoColumn = () => {
   }, []);
 
   const asyncFetch = () => {
-    fetch(
-      "https://gw.alipayobjects.com/os/antfincdn/PC3daFYjNw/column-data.json"
-    )
+    fetch('https://gw.alipayobjects.com/os/antfincdn/PC3daFYjNw/column-data.json')
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => {
-        console.log("fetch data failed", error);
+        console.log('fetch data failed', error);
       });
   };
   const config = {
     data,
-    xField: "city",
-    yField: "value",
-    seriesField: "type",
+    xField: 'city',
+    yField: 'value',
+    seriesField: 'type',
     isGroup: true,
     columnStyle: {
       radius: [20, 20, 0, 0],
     },
   };
 
-  return <Column style={{height: '99%'}} {...config} />;
+  return <Column style={{ height: '99%' }} {...config} />;
 };
 
 export default DemoColumn;

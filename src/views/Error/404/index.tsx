@@ -1,4 +1,4 @@
-import ErrorBox from "../ErrorBox";
+import ErrorBox from '../ErrorBox';
 
 const Error404 = () => {
   return <ErrorBox h1Text="404" />;

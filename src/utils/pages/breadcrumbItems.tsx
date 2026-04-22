@@ -1,5 +1,5 @@
-import { HomeOutlined } from "@ant-design/icons";
-import { setBreadcrumbItemsFnType } from "@/types/breadcrumbs";
+import { HomeOutlined } from '@ant-design/icons';
+import { setBreadcrumbItemsFnType } from '@/types/breadcrumbs';
 
 /**
  * 递归生成面包屑导航需要的数据
@@ -22,19 +22,18 @@ export const setBreadcrumbItems: setBreadcrumbItemsFnType = (
       title: (
         <>
           <HomeOutlined />
-          <span style={{ marginLeft: "10px" }}>Home</span>
+          <span style={{ marginLeft: '10px' }}>Home</span>
         </>
       ),
-      href: "/",
+      href: '/',
     },
   ];
 
-  const locationPathLength = locationPath.pathname.split("/").length;
+  const locationPathLength = locationPath.pathname.split('/').length;
 
   // 判断是否是一级路由
   if (locationPathLength === 2) {
-    const { path, meta } =
-      array.find((item) => item.path === locationPath.pathname) || {};
+    const { path, meta } = array.find((item) => item.path === locationPath.pathname) || {};
 
     if (meta && meta.title) {
       arr.push({
@@ -49,14 +48,14 @@ export const setBreadcrumbItems: setBreadcrumbItemsFnType = (
     // 根据路径信息第一个单词判断
     const { children, meta } =
       array.find((item) => {
-        return item.path.split("/")[1] === locationPath.pathname.split("/")[1];
+        return item.path.split('/')[1] === locationPath.pathname.split('/')[1];
       }) || {};
 
     // 有子集菜单 children 就开始递归
     if (children && children.length > 0) {
       arr.push({
         title: <span>{meta?.title}</span>,
-        href: "#",
+        href: '#',
       });
       return setBreadcrumbItems([], locationPath, arr, step + 1, children);
     }
@@ -64,8 +63,7 @@ export const setBreadcrumbItems: setBreadcrumbItemsFnType = (
     if (step > 0) {
       // 目前只是处理到第三级，考虑到没必要第四级，所以还是有问题
       const { path, meta } =
-        routesChildren?.find((item) => item.path === locationPath.pathname) ||
-        {};
+        routesChildren?.find((item) => item.path === locationPath.pathname) || {};
       newArray.push({
         title: <span>{meta?.title}</span>,
         href: path!,

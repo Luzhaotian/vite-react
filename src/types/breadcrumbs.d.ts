@@ -1,4 +1,4 @@
-import { routesType } from "@/types/route";
+import { routesType } from '@/types/route';
 export interface breadcrumbItemsType {
   title: JSX.Element;
   href: string;

@@ -1,21 +1,19 @@
-import error404 from "~/images/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif";
-import styled from "./index.module.scss";
-import { Button, Space } from "antd";
-import { ApiTwoTone } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
-import { notFound } from '@/types/error' 
+import error404 from '~/images/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif';
+import styled from './index.module.scss';
+import { Button, Space } from 'antd';
+import { ApiTwoTone } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
+import { notFound } from '@/types/error';
 const NotFound: notFound = (props) => {
   const { notFoundBox, text } = styled;
   const navigateTo = useNavigate();
   const toHomeClick = () => {
-    navigateTo("/");
+    navigateTo('/');
   };
   return (
     <div className={notFoundBox}>
       <div className={text}>
-        <h1 style={{ fontSize: "36px", marginBottom: "20px" }}>
-          {props.h1Text}
-        </h1>
+        <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>{props.h1Text}</h1>
         <Space>
           <ApiTwoTone /> 啊哦～页面消失了哦～
         </Space>

@@ -1,13 +1,6 @@
-import styled, { IStyledComponent } from "styled-components";
+import styled from 'styled-components';
 
-const Box: IStyledComponent<
-  "web",
-  "div",
-  React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement> &
-    object
-> &
-  object = styled.div`
+const Box = styled.div`
   color: blueviolet;
 `;
 

@@ -1,5 +1,5 @@
-import { menuClick, MenuItem, getItemType } from "@/types/mainMenu";
-import React, { useState, useEffect } from "react";
+import { menuClick, MenuItem, getItemType } from '@/types/mainMenu';
+import React, { useState, useEffect } from 'react';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -7,18 +7,12 @@ import {
   TeamOutlined,
   UserOutlined,
   HomeOutlined,
-} from "@ant-design/icons";
-import { Menu } from "antd";
-import type { MenuProps } from "antd";
-import { useNavigate, useLocation } from "react-router-dom";
+} from '@ant-design/icons';
+import { Menu } from 'antd';
+import type { MenuProps } from 'antd';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const getItem: getItemType = function getItem(
-  label,
-  key,
-  icon,
-  children,
-  type
-) {
+const getItem: getItemType = function getItem(label, key, icon, children, type) {
   return {
     key,
     icon,
@@ -29,22 +23,22 @@ const getItem: getItemType = function getItem(
 };
 
 const items: MenuItem[] = [
-  getItem("Home", "/home", <HomeOutlined />),
-  getItem("About", "/about", <PieChartOutlined />),
-  getItem("Page", "/page", <DesktopOutlined />),
-  getItem("User", "/user", <UserOutlined />, [
-    getItem("Menu", "/user/menu"),
-    getItem("User-02", "/user/user-02"),
-    getItem("User-03", "/user/user-03"),
+  getItem('Home', '/home', <HomeOutlined />),
+  getItem('About', '/about', <PieChartOutlined />),
+  getItem('Page', '/page', <DesktopOutlined />),
+  getItem('User', '/user', <UserOutlined />, [
+    getItem('Menu', '/user/menu'),
+    getItem('User-02', '/user/user-02'),
+    getItem('User-03', '/user/user-03'),
   ]),
-  getItem("Team", "/team", <TeamOutlined />, [
-    getItem("Team-01", "/team/team-01"),
-    getItem("Team-02", "/team/team-02"),
+  getItem('Team', '/team', <TeamOutlined />, [
+    getItem('Team-01', '/team/team-01'),
+    getItem('Team-02', '/team/team-02'),
   ]),
-  getItem("Files", "/files", <FileOutlined />),
+  getItem('Files', '/files', <FileOutlined />),
 ];
 
-const rootSubmenuKeys = ["/user", "/team"];
+const rootSubmenuKeys = ['/user', '/team'];
 const MainMenu: React.FC = () => {
   const navigateTo = useNavigate();
   const currentRoute = useLocation();
@@ -61,7 +55,7 @@ const MainMenu: React.FC = () => {
   const menuClick: menuClick = (e) => {
     navigateTo(e.key);
   };
-  const onOpenChange: MenuProps["onOpenChange"] = (keys) => {
+  const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
     if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
       setOpenKeys(keys);

@@ -2,8 +2,7 @@
  * 删除本地缓存
  * @param {String} name
  */
-export const localStorageRemoveItem = (name: string) =>
-  localStorage.removeItem(name);
+export const localStorageRemoveItem = (name: string) => localStorage.removeItem(name);
 
 /**
  * 本地缓存
@@ -20,16 +19,14 @@ export const localStorageSetItem = <Input>(name: string, object: Input) => {
  * @param {String} name
  * @returns any
  */
-export const localStorageGetItem = (name: string) =>
-  JSON.parse(localStorage.getItem(name)!);
+export const localStorageGetItem = (name: string) => JSON.parse(localStorage.getItem(name)!);
 
 /**
  * 判断本地缓存是否有
  * @param {String} name
  * @returns Boolean
  */
-export const isLocalStorageGetItem = (name: string) =>
-  !(localStorageGetItem(name) === null);
+export const isLocalStorageGetItem = (name: string) => !(localStorageGetItem(name) === null);
 
 /**
  * 清空缓存

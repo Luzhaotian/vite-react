@@ -1,7 +1,7 @@
-import App from "../App";
-import Top from "@/views/Layout/Top";
-import About from "@/views/About";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import App from '../App';
+import Top from '@/views/Layout/Top';
+import About from '@/views/About';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 const baseRouter = () => (
   <BrowserRouter>
