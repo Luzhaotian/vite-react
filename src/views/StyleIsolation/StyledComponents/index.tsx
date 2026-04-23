@@ -4,7 +4,7 @@ const Box = styled.div`
   color: blueviolet;
 `;
 
-const StyleIsolation = (props: any) => {
+const StyleIsolation = (props: { type?: string }) => {
   return (
     <Box>
       这是 StyleIsolation 组件 &nbsp;

@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const { loginFormBox, loginFormButton, formTitle } = styles;
   const [loadings, setLoadings] = useState<boolean[]>([]);
 
-  const onFinish = (values: any) => {
+  const onFinish = (values: Record<string, string>) => {
     console.log('Received values of form: ', values);
     localStorageSetItem('userInfo', values);
     const arg = Object.entries(values).reduce(

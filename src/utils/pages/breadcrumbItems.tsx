@@ -38,7 +38,7 @@ export const setBreadcrumbItems: setBreadcrumbItemsFnType = (
     if (meta && meta.title) {
       arr.push({
         title: <span>{meta?.title}</span>,
-        href: path!,
+        href: path ?? '/',
       });
     }
     // 如果是 直接抛出去
@@ -66,7 +66,7 @@ export const setBreadcrumbItems: setBreadcrumbItemsFnType = (
         routesChildren?.find((item) => item.path === locationPath.pathname) || {};
       newArray.push({
         title: <span>{meta?.title}</span>,
-        href: path!,
+        href: path ?? '#',
       });
       return newArray;
     }

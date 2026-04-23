@@ -10,8 +10,8 @@ import type {
 
 type CustomTableProps<T> = TableProps<T>;
 
-const CustomTable = <T extends object = any>({ ...restProps }: CustomTableProps<T>) => (
-  <Table<T> {...restProps} />
-);
+const CustomTable = <T extends object = Record<string, unknown>>({
+  ...restProps
+}: CustomTableProps<T>) => <Table<T> {...restProps} />;
 
 export default CustomTable;

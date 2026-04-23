@@ -5,29 +5,29 @@ import { useEffect, useState } from 'react';
 import routes from '@/router';
 import { setBreadcrumbItems } from '@/utils/pages/breadcrumbItems';
 
+const defaultBreadcrumbItems = [
+  {
+    title: (
+      <>
+        <HomeOutlined />
+        <span style={{ marginLeft: '10px' }}>Home</span>
+      </>
+    ),
+    href: '/',
+  },
+];
+
 const MainBreadcrumbs = () => {
   const location = useLocation();
-  // 初识默认值 如果是空数组 TS 会报错
-  const breadcrumbItems = [
-    {
-      title: (
-        <>
-          <HomeOutlined />
-          <span style={{ marginLeft: '10px' }}>Home</span>
-        </>
-      ),
-      href: '/',
-    },
-  ];
-  const [secondBreadcrumb, setSecondBreadcrumb] = useState(breadcrumbItems);
+  const [secondBreadcrumb, setSecondBreadcrumb] = useState(defaultBreadcrumbItems);
 
   useEffect(() => {
     const path = location;
     const { children } = routes.find((item) => item.name === 'menuRoutes') ?? {};
 
-    const arr = setBreadcrumbItems(children!, path);
+    const arr = setBreadcrumbItems(children ?? [], path);
 
-    setSecondBreadcrumb(arr!);
+    setSecondBreadcrumb(arr ?? defaultBreadcrumbItems);
   }, [location]);
 
   return <Breadcrumb items={secondBreadcrumb}></Breadcrumb>;

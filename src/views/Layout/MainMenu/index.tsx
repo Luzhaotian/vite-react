@@ -43,7 +43,7 @@ const MainMenu: React.FC = () => {
   const navigateTo = useNavigate();
   const currentRoute = useLocation();
 
-  const firstOpenKeys = currentRoute.pathname.match(/^\/[\w-]+/)![0];
+  const firstOpenKeys = currentRoute.pathname.match(/^\/[\w-]+/)?.[0] ?? '/';
   const [openKeys, setOpenKeys] = useState([firstOpenKeys]);
   // 定义状态current（当前菜单）
   const [current, setCurrent] = useState(currentRoute.pathname);
@@ -57,7 +57,7 @@ const MainMenu: React.FC = () => {
   };
   const onOpenChange: MenuProps['onOpenChange'] = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-    if (rootSubmenuKeys.indexOf(latestOpenKey!) === -1) {
+    if (rootSubmenuKeys.indexOf(latestOpenKey ?? '') === -1) {
       setOpenKeys(keys);
     } else {
       setOpenKeys(latestOpenKey ? [latestOpenKey] : []);

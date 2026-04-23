@@ -3,7 +3,8 @@ import { randomNumber } from '@/utils/random';
 const init = () => {
   const canvas = document.getElementById('canvas') as canvasType;
 
-  const ctx = canvas.getContext('2d')!;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
   const arr: Dot[] = [];
   setCanvasShape(canvas);
   class Dot {

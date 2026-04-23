@@ -1,24 +1,21 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 import Top from '@/views/Layout/Top';
 import Login from '@/views/Login';
-import SkeletonLoading from '@/views/SkeletonLoading';
 import { Navigate } from 'react-router-dom';
 import { routesType } from '@/types/route';
+import withLoadingComponent from '@/components/withLoadingComponent';
 
-const Error404 = lazy(() => import('@/views/Error/404'));
-const About = lazy(() => import('@/views/About'));
-const Page = lazy(() => import('@/views/Page'));
-const Menu = lazy(() => import('@/views/User/Menu'));
-const User02 = lazy(() => import('@/views/User/User02'));
-const User03 = lazy(() => import('@/views/User/User03'));
-const Files = lazy(() => import('@/views/Files'));
-const Team01 = lazy(() => import('@/views/Team/Team01'));
-const Team02 = lazy(() => import('@/views/Team/Team02'));
-const Home = lazy(() => import('@/views/Home'));
+const Error404 = lazy(() => import('@/views/Error/404')); // eslint-disable-line react-refresh/only-export-components
+const About = lazy(() => import('@/views/About')); // eslint-disable-line react-refresh/only-export-components
+const Page = lazy(() => import('@/views/Page')); // eslint-disable-line react-refresh/only-export-components
+const Menu = lazy(() => import('@/views/User/Menu')); // eslint-disable-line react-refresh/only-export-components
+const User02 = lazy(() => import('@/views/User/User02')); // eslint-disable-line react-refresh/only-export-components
+const User03 = lazy(() => import('@/views/User/User03')); // eslint-disable-line react-refresh/only-export-components
+const Files = lazy(() => import('@/views/Files')); // eslint-disable-line react-refresh/only-export-components
+const Team01 = lazy(() => import('@/views/Team/Team01')); // eslint-disable-line react-refresh/only-export-components
+const Team02 = lazy(() => import('@/views/Team/Team02')); // eslint-disable-line react-refresh/only-export-components
+const Home = lazy(() => import('@/views/Home')); // eslint-disable-line react-refresh/only-export-components
 
-const withLoadingComponent = (Comp: JSX.Element) => (
-  <React.Suspense fallback={<SkeletonLoading />}>{Comp}</React.Suspense>
-);
 const routes: routesType[] = [
   {
     path: '/',

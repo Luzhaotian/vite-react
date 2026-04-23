@@ -76,7 +76,6 @@ const App: React.FC = () => (
     <CheckCircleTwoTone twoToneColor="#52c41a" />
     <HeartIcon style={{ color: 'hotpink' }} />
     <PandaIcon style={{ fontSize: '32px' }} />
-    <Icon component={HomeOutlined as React.ForwardRefExoticComponent<any>} />
     <HomeOutlined />
   </Space>
 );

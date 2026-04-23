@@ -4,17 +4,7 @@ import { ProTable, TableDropdown } from '@ant-design/pro-components';
 import { Button, Dropdown, Space, Tag } from 'antd';
 import { useRef } from 'react';
 import request from 'umi-request';
-export const waitTimePromise = async (time = 100) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, time);
-  });
-};
-
-export const waitTime = async (time = 100) => {
-  await waitTimePromise(time);
-};
+import { waitTime } from '@/utils/waitTime';
 
 type GithubIssueItem = {
   url: string;
@@ -150,7 +140,7 @@ const columns: ProColumns<GithubIssueItem>[] = [
   },
 ];
 
-export default () => {
+const About = () => {
   const actionRef = useRef<ActionType>();
   return (
     <ProTable<GithubIssueItem>
@@ -241,3 +231,5 @@ export default () => {
     />
   );
 };
+
+export default About;

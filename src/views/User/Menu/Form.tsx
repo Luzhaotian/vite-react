@@ -53,7 +53,7 @@ const AdvancedSearchForm = () => {
     return children;
   };
 
-  const onFinish = (values: any) => {
+  const onFinish = (values: Record<string, unknown>) => {
     console.log('Received values of form: ', values);
   };
 
