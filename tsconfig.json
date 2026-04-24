@@ -20,9 +20,8 @@
     "noFallthroughCasesInSwitch": true,
 
     /* 路径提示 */
-    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],
