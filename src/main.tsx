@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 // 样式顺序 初始化样式最前面
 // 全局配置初始化 css 文件
-import 'reset-css';
+import 'reset-css/reset.css';
 // 全局样式 为了覆盖业务 UI 组件样式
 import '@/assets/styles/global.scss';
 // UI 组件样式

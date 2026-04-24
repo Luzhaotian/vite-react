@@ -1,10 +1,8 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import { Image } from 'antd';
-import Image1 from '~/images/wallhaven-1p3meg_1920x1080.png';
 
 const contentStyle: React.CSSProperties = {
-  //   height: "160px",
   color: '#fff',
   lineHeight: '400px',
   textAlign: 'center',
@@ -14,10 +12,12 @@ const contentStyle: React.CSSProperties = {
   objectFit: 'cover',
 };
 
+const placeholderImage = 'https://via.placeholder.com/1920x400/364d79/ffffff?text=Carousel+1';
+
 const App: React.FC = () => (
   <Carousel>
     <div>
-      <Image style={contentStyle} src={Image1} />
+      <Image style={contentStyle} src={placeholderImage} />
     </div>
     <div>
       <h3 style={contentStyle}>2</h3>
