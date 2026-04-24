@@ -1,12 +1,5 @@
 import { Table } from 'antd';
-import type {
-  // ColumnsType,
-  TableProps,
-} from 'antd/es/table';
-
-// interface CustomTableProps<T> extends TableProps<T> {
-//   columns: ColumnsType<T>;
-// }
+import type { TableProps } from 'antd/es/table';
 
 type CustomTableProps<T> = TableProps<T>;
 

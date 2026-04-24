@@ -1,5 +1,5 @@
-import { menuClick, MenuItem, getItemType } from '@/types/mainMenu';
-import React, { useState, useEffect } from 'react';
+import { menuClick, MenuItem } from '@/types/mainMenu';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -8,40 +8,43 @@ import {
   UserOutlined,
   HomeOutlined,
 } from '@ant-design/icons';
+import type { ReactNode } from 'react';
 import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { menuRoutes } from '@/router/menuRoutes';
+import { routesType } from '@/types/route';
 
-const getItem: getItemType = function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
+const iconMapping: Record<string, ReactNode> = {
+  Home: <HomeOutlined />,
+  About: <PieChartOutlined />,
+  Page: <DesktopOutlined />,
+  Files: <FileOutlined />,
+  User: <UserOutlined />,
+  Team: <TeamOutlined />,
 };
 
-const items: MenuItem[] = [
-  getItem('Home', '/home', <HomeOutlined />),
-  getItem('About', '/about', <PieChartOutlined />),
-  getItem('Page', '/page', <DesktopOutlined />),
-  getItem('User', '/user', <UserOutlined />, [
-    getItem('Menu', '/user/menu'),
-    getItem('User-02', '/user/user-02'),
-    getItem('User-03', '/user/user-03'),
-  ]),
-  getItem('Team', '/team', <TeamOutlined />, [
-    getItem('Team-01', '/team/team-01'),
-    getItem('Team-02', '/team/team-02'),
-  ]),
-  getItem('Files', '/files', <FileOutlined />),
-];
+const getMenuItems = (routeList: routesType[]): MenuItem[] => {
+  return routeList.map((route) => {
+    const label = route.meta?.title || route.path.split('/').pop() || route.path;
+    const icon = iconMapping[label];
+    const children = route.children ? getMenuItems(route.children) : undefined;
 
-const rootSubmenuKeys = ['/user', '/team'];
+    return {
+      key: route.path,
+      icon,
+      children,
+      label,
+    } as MenuItem;
+  });
+};
+
+const rootSubmenuKeys = menuRoutes.filter((r) => r.children).map((r) => r.path);
 const MainMenu: React.FC = () => {
   const navigateTo = useNavigate();
   const currentRoute = useLocation();
+
+  const items = useMemo(() => getMenuItems(menuRoutes), []);
 
   const firstOpenKeys = currentRoute.pathname.match(/^\/[\w-]+/)?.[0] ?? '/';
   const [openKeys, setOpenKeys] = useState([firstOpenKeys]);

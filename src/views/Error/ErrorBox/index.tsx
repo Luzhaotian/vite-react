@@ -5,6 +5,7 @@ import { ApiTwoTone } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { notFound } from '@/types/error';
 const NotFound: notFound = (props) => {
+  const { h1Text } = props;
   const { notFoundBox, text } = styled;
   const navigateTo = useNavigate();
   const toHomeClick = () => {
@@ -13,7 +14,7 @@ const NotFound: notFound = (props) => {
   return (
     <div className={notFoundBox}>
       <div className={text}>
-        <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>{props.h1Text}</h1>
+        <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>{h1Text}</h1>
         <Space>
           <ApiTwoTone /> 啊哦～页面消失了哦～
         </Space>

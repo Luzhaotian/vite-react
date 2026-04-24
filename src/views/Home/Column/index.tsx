@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import ReactDOM from "react-dom";
 import { Column } from '@ant-design/plots';
 
 const DemoColumn = () => {
