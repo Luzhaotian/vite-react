@@ -1,0 +1,1 @@
+import{kt as e}from"./AntdIcon-DDO2dX9v.js";function t(t,n){var r=e({},t);return Array.isArray(n)&&n.forEach(function(e){delete r[e]}),r}export{t};

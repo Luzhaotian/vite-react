@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-B1meOfd3.js";var t=e(),n=()=>(0,t.jsx)(`div`,{className:`files`,children:`这是 Files 组件`});export{n as default};

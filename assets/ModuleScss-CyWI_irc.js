@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-B1meOfd3.js";var t={box1:`_box1_1qh7f_1`},n=e(),r=()=>(0,n.jsx)(`div`,{className:t.box1,children:`这是 ModuleScss 组件`});export{r as default};

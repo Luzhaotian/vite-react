@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-B1meOfd3.js";import t from"./ErrorBox-VuSAJDeM.js";var n=e(),r=()=>(0,n.jsx)(t,{h1Text:`404`});export{r as default};

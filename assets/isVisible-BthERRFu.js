@@ -1,0 +1,1 @@
+var e=(function(e){if(!e)return!1;if(e instanceof Element){if(e.offsetParent)return!0;if(e.getBBox){var t=e.getBBox(),n=t.width,r=t.height;if(n||r)return!0}if(e.getBoundingClientRect){var i=e.getBoundingClientRect(),a=i.width,o=i.height;if(a||o)return!0}}return!1});export{e as t};

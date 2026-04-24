@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-Ps8w5BGs.js";import{t}from"./react-dom--k88b8IN.js";var n=e(t());function r(e,t,r,i){var a=n.unstable_batchedUpdates?function(e){n.unstable_batchedUpdates(r,e)}:r;return e.addEventListener&&e.addEventListener(t,a,i),{remove:function(){e.removeEventListener&&e.removeEventListener(t,a,i)}}}export{r as t};

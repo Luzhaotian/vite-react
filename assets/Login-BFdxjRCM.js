@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-B1meOfd3.js";import t from"./LoginBackground-Bhhgvfrf.js";import n from"./LoginForm-D83MWxlp.js";var r=e(),i=()=>(0,r.jsxs)(`div`,{style:{position:`relative`},children:[(0,r.jsx)(t,{}),(0,r.jsx)(n,{})]});export{i as default};

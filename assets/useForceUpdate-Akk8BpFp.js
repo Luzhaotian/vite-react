@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-Ps8w5BGs.js";import{n as t}from"./jsx-runtime-B1meOfd3.js";var n=e(t());function r(){let[,e]=n.useReducer(e=>e+1,0);return e}export{r as t};
