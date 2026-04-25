@@ -57,26 +57,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  # Publishes https://{owner}.github.io/ → /vite-react/ (needs repo {owner}.github.io).
-  # Enable: Actions variable DEPLOY_USER_GITHUB_IO_REDIRECT=true, secret USER_SITE_PAGES_TOKEN (repo PAT).
-  deploy-user-site-root:
-    if: vars.DEPLOY_USER_GITHUB_IO_REDIRECT == 'true'
-    runs-on: ubuntu-latest
-    concurrency:
-      group: user-github-io-root
-      cancel-in-progress: true
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Push redirect to ${{ github.repository_owner }}.github.io
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.USER_SITE_PAGES_TOKEN }}
-          external_repository: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-          publish_branch: main
-          publish_dir: ./user-github-pages-root
-          keep_files: true
